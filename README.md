@@ -2,7 +2,10 @@
 
 ## Overview
 
-**MBActionSheet** is a Multiple Button ActionSheet to mimic the cocoa control UIActionSheet. Basically, it can have multi buttons on a line as the screen shot displayed. The usage of MBActionSheet is almost the same as the UIActionSheet; adding the delegate protocol into the interface and implement the protocol method, using the tag and button index to distingush which sheet and button was pressed. The only difference is you must specify the other buttons' line count and how many buttons you would like to have on each line. Please refer to the sample project.
+**MBActionSheet** is a Multiple Button ActionSheet to mimic the cocoa control UIActionSheet. Basically, it can have multi buttons on a line as the screen shot displayed. 
+
+The usage of MBActionSheet is almost the same as the UIActionSheet; adding the delegate protocol into the interface and implement the protocol method; using the tag and button index to distingush which sheet and button were pressed. The only difference is you must specify the other buttons' line count and how many buttons you would like to have on each line. Please refer to the sample project.
+
 Also the funtionalities of MBActionSheet is very similar with the UIActionSheet. It will slide into the screen from the bottom and slide out inversely. The background is 40% transparent. If there is navigation bar, the bar will be transparent and disabled when MBActionSheet is on the screen.
 
 ![Screen Shot](https://github.com/russj/MBActionSheet/blob/master/Screen%20Shot.png?raw=true)
