@@ -2,235 +2,31 @@
 
 ## Overview
 
-**Mou**, the missing Markdown editor for *web developers*.
+**MBActionSheet** is a Multiple Button ActionSheet to mimic the cocoa control UIActionSheet. Basically, it can have multi buttons on a line as the screen shot displayed. The usage of MBActionSheet is almost the same as the UIActionSheet; adding the delegate protocol into the interface and implement the protocol method, using the tag and button index to distingush which sheet and button was pressed. The only difference is you must specify the other buttons' line count and how many buttons you would like to have on each line. Please refer to the sample project.
+Also the funtionalities of MBActionSheet is very similar with the UIActionSheet. It will slide into the screen from the bottom and slide out inversely. The background is 40% transparent. If there is navigation bar, the bar will be transparent and disabled when MBActionSheet is on the screen.
 
-![Mou icon](https://github.com/russj/MBActionSheet/blob/master/Screen%20Shot%202012-09-27%20at%2011.38.40%20AM.png?raw=true)
+![Screen Shot](https://github.com/russj/MBActionSheet/blob/master/Screen%20Shot.png?raw=true)
 
-## Overview
+##Requirements
+* iOS 5.0 and above
+* Xcode 4.2 and above (MBActionSheet uses ARC.)
+* Frameworks: Foundation, UIKit, CoreGraphics
+* Support iPhone5 
 
-**Mou**, the missing Markdown editor for *web developers*.
 
-### Syntax
+##License
+This code is distributed under the terms and conditions of the MIT license.
 
-#### Strong and Emphasize 
+Copyright (c) 2012 Lei Jing (Russell.jing@gmail.com)
 
-**strong** or __strong__ ( Cmd + B )
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-*emphasize* or _emphasize_ ( Cmd + I )
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-**Sometimes I want a lot of text to be bold.
-Like, seriously, a _LOT_ of text**
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#### Blockquotes
+## Release Note
 
-> Right angle brackets &gt; are used for block quotes.
+### Version 0.1 
+28.9.2012
 
-#### Links and Email
-
-An email <example@example.com> link.
-
-Simple inline link <http://chenluois.com>, another inline link [Smaller](http://smallerapp.com), one more inline link with title [Resize](http://resizesafari.com "a Safari extension").
-
-A [reference style][id] link. Input id, then anywhere in the doc, define the link with corresponding id:
-
-[id]: http://mouapp.com "Markdown editor on Mac OS X"
-
-Titles ( or called tool tips ) in the links are optional.
-
-#### Images
-
-An inline image ![Smaller icon](http://smallerapp.com/favicon.ico "Title here"), title is optional.
-
-A ![Resize icon][2] reference style image.
-
-[2]: http://resizesafari.com/favicon.ico "Title"
-
-#### Inline code and Block code
-
-Inline code are surround by `backtick` key. To create a block code:
-
-	Indent each line by at least 1 tab, or 4 spaces.
-    var Mou = exactlyTheAppIwant; 
-
-####  Ordered Lists
-
-Ordered lists are created using "1." + Space:
-
-1. Ordered list item
-2. Ordered list item
-3. Ordered list item
-
-#### Unordered Lists
-
-Unordered list are created using "*" + Space:
-
-* Unordered list item
-* Unordered list item
-* Unordered list item 
-
-Or using "-" + Space:
-
-- Unordered list item
-- Unordered list item
-- Unordered list item
-
-#### Hard Linebreak
-
-End a line with two or more spaces will create a hard linebreak, called `<br />` in HTML. ( Control + Return )  
-Above line ended with 2 spaces.
-
-#### Horizontal Rules
-
-Three or more asterisks or dashes:
-
-***
-
----
-
-- - - -
-
-#### Headers
-
-Setext-style:
-
-This is H1
-==========
-
-This is H2
-----------
-
-atx-style:
-
-# This is H1
-## This is H2
-### This is H3
-#### This is H4
-##### This is H5
-###### This is H6
-
-
-### Extra Syntax
-
-#### Footnotes
-
-Footnotes work mostly like reference-style links. A footnote is made of two things: a marker in the text that will become a superscript number; a footnote definition that will be placed in a list of footnotes at the end of the document. A footnote looks like this:
-
-That's some text with a footnote.[^1]
-
-[^1]: And that's the footnote.
-
-
-#### Strikethrough
-
-Wrap with 2 tilde characters:
-
-~~Strikethrough~~
-
-
-#### Fenced Code Blocks
-
-Start with a line containing 3 or more backticks, and ends with the first line with the same number of backticks:
-
-```
-Fenced code blocks are like Stardard Markdown’s regular code
-blocks, except that they’re not indented and instead rely on
-a start and end fence lines to delimit the code block.
-```
-
-#### Tables
-
-A simple table looks like this:
-
-First Header | Second Header | Third Header
------------- | ------------- | ------------
-Content Cell | Content Cell  | Content Cell
-Content Cell | Content Cell  | Content Cell
-
-If you wish, you can add a leading and tailing pipe to each line of the table:
-
-| First Header | Second Header | Third Header |
-| ------------ | ------------- | ------------ |
-| Content Cell | Content Cell  | Content Cell |
-| Content Cell | Content Cell  | Content Cell |
-
-Specify alignement for each column by adding colons to separator lines:
-
-First Header | Second Header | Third Header
-:----------- | :-----------: | -----------:
-Left         | Center        | Right
-Left         | Center        | Right
-
-
-### Shortcuts
-
-#### View
-
-* Toggle live preview: Shift + Cmd + I
-* Toggle Words Counter: Shift + Cmd + W
-* Toggle Transparent: Shift + Cmd + T
-* Left/Right = 1/1: Cmd + 0
-* Left/Right = 3/1: Cmd + +
-* Left/Right = 1/3: Cmd + -
-* Toggle Writing orientation: Cmd + L
-* Toggle fullscreen: Control + Cmd + F
-
-#### Actions
-
-* Copy HTML: Option + Cmd + C
-* Strong: Select text, Cmd + B
-* Emphasize: Select text, Cmd + I
-* Inline Code: Select text, Cmd + K
-* Strikethrough: Select text, Cmd + U
-* Link: Select text, Control + Shift + L
-* Image: Select text, Control + Shift + I
-* Select Word: Control + Option + W
-* Select Line: Shift + Cmd + L
-* Select All: Cmd + A
-* Deselect All: Cmd + D
-* Convert to Uppercase: Select text, Control + U
-* Convert to Lowercase: Select text, Control + Shift + U
-* Convert to Titlecase: Select text, Control + Option + U
-* Convert to List: Select lines, Control + L
-* Convert to Blockquote: Select lines, Control + Q
-* Convert to H1: Cmd + 1
-* Convert to H2: Cmd + 2
-* Convert to H3: Cmd + 3
-* Convert to H4: Cmd + 4
-* Convert to H5: Cmd + 5
-* Convert to H6: Cmd + 6
-* Convert Spaces to Tabs: Control + [
-* Convert Tabs to Spaces: Control + ]
-* Insert entity <: Control + Shift + ,
-* Insert entity >: Control + Shift + .
-* Insert entity &: Control + Shift + 7
-* Insert entity Space: Control + Shift + Space
-* Shift Line Left: Select lines, Cmd + [
-* Shift Line Right: Select lines, Cmd + ]
-* New Line: Cmd + Return
-* Comment: Cmd + /
-* Hard Linebreak: Control + Return
-
-#### Edit
-
-* Auto complete current word: Esc
-* Find: Cmd + F
-* Close find bar: Esc
-
-#### Post
-
-* Post on Scriptogr.am: Control + Shift + S
-* Post on Tumblr: Control + Shift + T
-
-#### Export
-
-* Export HTML: Option + Cmd + E
-* Export PDF:  Option + Cmd + P
-
-
-### And more?
-
-Don't forget to check Preferences, lots of useful options are there.
-
-Follow [@chenluois](http://twitter.com/chenluois) on Twitter for the latest news.
-
-For feedback, use the menu `Help` - `Send Feedback`
